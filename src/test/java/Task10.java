@@ -23,7 +23,7 @@ public class Task10 {
 
         driver.findElement(By.cssSelector("input[type='submit']")).click();
 
-        System.out.println(driver.getTitle().contains("phone cover"));
+        System.out.println(driver.getTitle().contains("Face wash"));
 
 
     }
