@@ -27,7 +27,7 @@ public class SimpleLocatorPractice {
         //driver.findElement(By.className("pHiOh")).click();
 
         driver.get("https://www.etsy.com/");
-        driver.findElement(By.id("global-enhancements-search-query")).sendKeys("Lights", Keys.ENTER);
+        driver.findElement(By.id("global-enhancements-search-query")).sendKeys("gifts", Keys.ENTER);
         driver.findElement(By.tagName("h3"));
 
     }
