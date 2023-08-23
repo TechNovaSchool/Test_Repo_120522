@@ -8,6 +8,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class SimpleLocatorPractice {
     public static void main(String[] args) {
+
+
         WebDriverManager.chromedriver().setup();
         WebDriver driver=new ChromeDriver();
 
