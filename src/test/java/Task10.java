@@ -18,7 +18,7 @@ public class Task10 {
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver= new FirefoxDriver();
 
-        driver.get("https://amazon.com/");
+        driver.get("https://www.amazon.ae/");
         driver.findElement(By.cssSelector("..nav-search-field>input")).sendKeys("phone cover");
 
         driver.findElement(By.cssSelector("input[type='submit']")).click();

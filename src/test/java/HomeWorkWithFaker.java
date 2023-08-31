@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class HomeWorkWithFaker {
     public static void main(String[] args) {
+
         Faker faker = new Faker();
 
         String firstName1=faker.name().firstName();
@@ -19,7 +20,7 @@ public class HomeWorkWithFaker {
 
         String email=faker.expression(firstName1+lastNAme1+"@gmail.com");
 
-        //---------------------------------------------
+        /////////---------------------------------------------///////////
 
         String address=faker.address().fullAddress();
 
@@ -29,6 +30,7 @@ public class HomeWorkWithFaker {
 
         String postalCode=faker.address().zipCode().substring(0,5);
 
+        ////////////////////////////////////////////////
 
         WebDriverManager.firefoxdriver().setup();
 
@@ -36,21 +38,21 @@ public class HomeWorkWithFaker {
 
         driver.get("https://demo.guru99.com/test/newtours/register.php");
 
-       WebElement firstName= driver.findElement(By.xpath("//input[@name=\"firstName\"]"));
+        WebElement firstName= driver.findElement(By.xpath("//input[@name=\"firstName\"]"));
 
-       WebElement LastName= driver.findElement(By.xpath("//input[@name=\"lastName\"]"));
+        WebElement LastName= driver.findElement(By.xpath("//input[@name=\"lastName\"]"));
 
-       WebElement phoneInput= driver.findElement(By.xpath("//input[@name=\"phone\"]"));
+        WebElement phoneInput= driver.findElement(By.xpath("//input[@name=\"phone\"]"));
 
         WebElement emailInput=driver.findElement(By.xpath("//input[@id=\"userName\"]"));
 
-       WebElement addressInput= driver.findElement(By.xpath("//input[@name=\"address1\"]"));
+        WebElement addressInput= driver.findElement(By.xpath("//input[@name=\"address1\"]"));
 
         WebElement cityInput=driver.findElement(By.xpath("//input[@name=\"city\"]"));
 
         WebElement stateInput=driver.findElement(By.xpath("//input[@name=\"state\"]"));
 
-       WebElement zipCodeInput= driver.findElement(By.xpath("//input[@name=\"postalCode\"]"));
+        WebElement zipCodeInput= driver.findElement(By.xpath("//input[@name=\"postalCode\"]"));
 
 
        firstName.sendKeys(firstName1);
@@ -65,7 +67,7 @@ public class HomeWorkWithFaker {
       WebElement countryDropDown =driver.findElement(By.xpath("//select[@name=\"country\"]"));
 
       Select select = new Select(countryDropDown);
-     // select.selectByVisibleText("AZERBAIJAN");
+      // select.selectByVisibleText("AZERBAIJAN");
       //select.selectByIndex(10);
       select.selectByValue("CROATIA");
 
