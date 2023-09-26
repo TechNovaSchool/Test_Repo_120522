@@ -14,12 +14,6 @@ import java.util.concurrent.TimeUnit;
 
 public class HomeworkTask19  {
     public static void main(String[] args) {
-        //TC#3
-        // 1. Open browser and login to smartbear software
-        // 2. Click on view all orders
-        // 3. Verify Susan McLaren has order on date “01/05/2010”
-
-
         //TC#2: Smartbear software order placing
         // 1.Open   browser
         WebDriverManager.firefoxdriver().setup();
