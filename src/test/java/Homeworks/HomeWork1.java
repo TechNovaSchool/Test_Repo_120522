@@ -32,7 +32,7 @@ public class HomeWork1 {
         submit.click();
         System.out.println("File successfully uploaded ");
         Alert alert=Driver.getDriver().switchTo().alert();
-        alert.accept();
+        alert.accept(); //C:\Users\Gul\OneDrive\Desktop\gul photo.png
 
     }
     @AfterClass

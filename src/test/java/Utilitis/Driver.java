@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class Driver {
 
     private Driver(){
@@ -31,6 +33,7 @@ public class Driver {
                 }
             }
             driver.manage().window().maximize();
+            //driver.manage().timeouts().implicitlyWait(10, TimeUnit.MILLISECONDS);
           //  Faker faker=new Faker();
         }
         return driver;

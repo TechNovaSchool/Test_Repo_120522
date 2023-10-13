@@ -118,6 +118,164 @@ What the driver utility does?
 -- instance at the time
 -- it also allows easy dynamic way to switch between browser using configuration file
 
+27/09/2023
+
+Recap
+Locators:
+ 8 locators: LinkText(),name,className,is,tagName,partialLinkedText,css,xpath
+
+css--> element[attribute]
+xpath-
+-->absolute(single /)
+--> relative() double //
+
+to locate a text //div[.="myText"]
+<---->
+
+What is TestNG?
+-- it is a unit testing framework
+-- also allows to perform functional testing
+-- and provides annotations 
+@BeforeClass/ @AfterClass
+@BeforeMethod/ @AfterClass
+@Test
+
+-------------------
+Assertion 
+-- Allows to verify actual value against expected one.
+Assertion will pass or the fail the test
+
+SoftAssertion--> it will skip a assertion that failed 
+and allows us to see the failed with AssertionAll() method
+
+Assertion regular it will stop running the code if it fails
+-------------------------------------------------
+
+@Ignore---> will skip the test from running
+ we also can skip it using comment//
+
+priority we can set when the test is created , and this will provide an order for running the.
+
+Dependency---> when we have a test that depends on another one
+-------------------------------------------
+
+Alerts
+ We have 2 types of alerts
+
+--> HTML alert--> is handled as a regular webElement(it allows us to interact with screen)
+
+--> JSAlert--> we can not to interact with the screen it will block the screen it until we press okay
+           --> we need to create an ALert abject to use it
+1. warning --> we only accept it
+2. Confirmation --> we can accept or decline
+3. Promt --> we can accept , decline and input text
+  Alert alerts = new Alert();
+------------------------------------------
+
+Iframes--> it is HTML inside another HTML
+Web driver can not focus on 2 frames(HTMLs) at the same time
+a)
+1) we need to locate the iframe as the regular web element 
+2) driver.switchTo().frame(webElement);
+
+b)
+byId value if the iframe has an id attribute
+
+c)
+by Index(0) will start with 0
+
+How to switch back to main frame--> switch default content--> it will navigate to amin frame
+How to switch to previous frame--> switch to parent
+-------------------------
+Windows/Tabs
+
+how to handle a separate tabs?
+
+we can use window handle
+We also to need create logic(loop) to switch the window
+have a special class to handle it
+driver.getWindowHandle()-- returns a string value of tab
+driver.getWindowHandles()
+
+----------------------------------------------------
+
+POM ---> Page object module
+
+POM--> is not a framework but is a design pattern
+
+In a page object model we create separate page for webElements, and store them inside of that page.
+
+In order to make them accessible from different places(classes) we need to use:
+public className(){
+PageFactory.initElements(Driver.getDriver(),this);
+}
+initElements --> creates connection between current java classes and webdriver 
+@FindBy --->annotation that comes from Selenium 
+It helps to locate webElements
+
+@FindBy(id="ctl00_MainContent_username")
+public WebElement username;
+-------------------
+
+What to remember aboutPOM?
+----------------------------
+--> We create separate class for each page of the application 
+--> we can store all webElements and it is related methods in that class
+--> to use the webelements we need to create an object from that page
+
+
+10.10.23
+
+Synchronization
+
+we need to align the webdriver with the flow of the page, when we have multiple moving element
+or elements which will take time to load/ appear on the page
+
+
+Because webElements might be visible only a particular time
+
+The webElement might be visible only a particular time
+---------
+How to handle?
+we can use :
+Thread.sleep()--> is not recommended / this a java class that will stop the full program from running
+ ExplicitWait --> we can add an explicit condition the webElement to be visible/ or clickable
+
+In order to use explicit wait we need to create an object from WebDriverWait
+
+WebDriverWait wait =new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+----------
+wait.until(ExpectedConditions.visibilityOf(dynamicElementPage.helloText));
+-------
+
+When we have elements that appear when we do hover over and then disappear after the
+mouse is moved is hard to get the locator for a particular element.
+
+We open dev tool--> Sources -> search for pause sign (left side), use keyboard to click on
+MAC -->  CMD +\
+Windows-->
+That will stop UI from moving until click back on play button
+
+Action class:
+
+Actions Class comes from Selenium library
+And it allows handling actions such;
+
+1. moveToElement
+2. doubleClick
+3. contextClick
+4. dragAndDrop
+
+Actions actions = new Actions(Driver.getDriver()); --> the object takes a driver a param
+
+actions.moveToElement(hoverOverPage.photo3).perform();
+actions.moveToElement(hoverOverPage.photo3).build().perform();
+.perform() is required at the end of each action from action class
+
+
+
+
+
 
 
 
